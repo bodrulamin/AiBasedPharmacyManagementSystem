@@ -19,13 +19,11 @@ public class DBConnector {
 
     static Connection conn = null;
 
-    public static Connection getConnection() throws SQLException {
+    public static Connection getConnection()   {
 
         if (conn == null) {
             try {
-                //            String url = "jdbc:mysql://sql6.freemysqlhosting.net:3306/sql6431541";
-//            String username = "sql6431541";
-//            String pass = "cR7nX9RzG3";
+
                 String url = "jdbc:mysql://localhost:3306/dms";
                 String username = "root";
                 String pass = "123456";
@@ -34,6 +32,8 @@ public class DBConnector {
                 conn = DriverManager.getConnection(url, username, pass);
                 System.out.println("connection successful");
             } catch (ClassNotFoundException ex) {
+                Logger.getLogger(DBConnector.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
                 Logger.getLogger(DBConnector.class.getName()).log(Level.SEVERE, null, ex);
             }
 
