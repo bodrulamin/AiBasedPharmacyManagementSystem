@@ -5,9 +5,10 @@
  */
 package drugstoremanagement;
 
-import drugstoremanagement.model.ComponentResizer;
-import drugstoremanagement.model.DragListener;
-import java.awt.Dimension;
+import CustomUI.Themes;
+import drugstoremanagement.controllers.CPController;
+import java.awt.Color;
+import java.awt.Component;
 
 /**
  *
@@ -19,20 +20,8 @@ public class ControlPanel extends javax.swing.JFrame {
      * Creates new form ControlPanel
      */
     public ControlPanel() {
-        setUndecorated(true);
-        setResizable(true);
         initComponents();
-        setLocationRelativeTo(null);
-
-        ComponentResizer cr = new ComponentResizer();
-        cr.registerComponent(this);
-        cr.setSnapSize(new Dimension(10, 10));
-        cr.setMinimumSize(new Dimension(300, 300));
-        cr.setMaximumSize(new Dimension(getToolkit().getScreenSize().width, getToolkit().getScreenSize().height));
-
-        DragListener drag = new DragListener(this);
-        upperPanel.addMouseListener(drag);
-        upperPanel.addMouseMotionListener(drag);
+        CPController.activeMenu = menuDashboard;
     }
 
     /**
@@ -44,249 +33,389 @@ public class ControlPanel extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        upperPanel = new javax.swing.JPanel();
-        minmaxclosePanel = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        popupMenu1 = new java.awt.PopupMenu();
         jPanel3 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        leftMenuPanel = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
-        jPanel6 = new javax.swing.JPanel();
-        jPanel7 = new javax.swing.JPanel();
-        jPanel8 = new javax.swing.JPanel();
-        dashBoardPanel = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        btnAddDrug = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        bottomParent = new javax.swing.JPanel();
+        holderMenus = new javax.swing.JPanel();
+        menuDashboard = new javax.swing.JPanel();
+        lbDashboard = new javax.swing.JLabel();
+        menuDrugSale = new javax.swing.JPanel();
+        lbDrugSale = new javax.swing.JLabel();
+        menuExpiring = new javax.swing.JPanel();
+        lbExpiring = new javax.swing.JLabel();
+        menuInventory = new javax.swing.JPanel();
+        lbInventory = new javax.swing.JLabel();
+        menuExpired = new javax.swing.JPanel();
+        lbExpired = new javax.swing.JLabel();
+        menuDrugIn = new javax.swing.JPanel();
+        lbDrugIn = new javax.swing.JLabel();
+        dashboardFrame = new javax.swing.JInternalFrame();
+        inventoryFrame = new javax.swing.JInternalFrame();
         jButton1 = new javax.swing.JButton();
-        btnSale = new javax.swing.JButton();
+        drugInFrame = new javax.swing.JInternalFrame();
+        jLabel2 = new javax.swing.JLabel();
+        drugSaleFrame = new javax.swing.JInternalFrame();
+        jLabel5 = new javax.swing.JLabel();
+        expiringFrame = new javax.swing.JInternalFrame();
+        expiredFrame = new javax.swing.JInternalFrame();
+
+        popupMenu1.setLabel("popupMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(800, 600));
+        setBackground(java.awt.Color.darkGray);
         setPreferredSize(new java.awt.Dimension(800, 600));
-        setSize(new java.awt.Dimension(800, 600));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        upperPanel.setBackground(new java.awt.Color(0, 204, 204));
-        upperPanel.setPreferredSize(new java.awt.Dimension(800, 50));
-        upperPanel.setLayout(new java.awt.BorderLayout());
+        jPanel3.setBackground(new java.awt.Color(1, 113, 130));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        minmaxclosePanel.setBackground(upperPanel.getBackground());
-        minmaxclosePanel.setPreferredSize(new java.awt.Dimension(162, 50));
+        jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Dashboard");
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 530, 70));
 
-        jPanel1.setBackground(upperPanel.getBackground());
-        jPanel1.setMinimumSize(new java.awt.Dimension(50, 50));
-        jPanel1.setPreferredSize(new java.awt.Dimension(100, 50));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1930, -1));
 
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/drugstoremanagement/images/exit.png"))); // NOI18N
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jLabel2MouseReleased(evt);
-            }
+        bottomParent.setBackground(new java.awt.Color(204, 204, 204));
+        bottomParent.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        holderMenus.setBackground(new java.awt.Color(153, 153, 153));
+        holderMenus.setMinimumSize(new java.awt.Dimension(150, 1023));
+        holderMenus.setPreferredSize(new java.awt.Dimension(250, 1023));
+        holderMenus.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        menuDashboard.setBackground(new java.awt.Color(50, 50, 50));
+        menuDashboard.setMinimumSize(new java.awt.Dimension(250, 50));
+        menuDashboard.setPreferredSize(new java.awt.Dimension(250, 80));
+
+        lbDashboard.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
+        lbDashboard.setForeground(new java.awt.Color(250, 250, 250));
+        lbDashboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/drugstoremanagement/images/dashboard.png"))); // NOI18N
+        lbDashboard.setText("   Dashboard");
+        lbDashboard.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
-
-        jPanel3.setBackground(upperPanel.getBackground());
-
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/drugstoremanagement/images/maximize.png"))); // NOI18N
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jLabel3MouseReleased(evt);
+                lbDashboardMouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel3MouseExited(evt);
+                lbDashboardMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lbDashboardMouseEntered(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+        javax.swing.GroupLayout menuDashboardLayout = new javax.swing.GroupLayout(menuDashboard);
+        menuDashboard.setLayout(menuDashboardLayout);
+        menuDashboardLayout.setHorizontalGroup(
+            menuDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuDashboardLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(lbDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        jPanel4.setBackground(upperPanel.getBackground());
-
-        jLabel4.setBackground(upperPanel.getBackground());
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/drugstoremanagement/images/minimize.png"))); // NOI18N
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        menuDashboardLayout.setVerticalGroup(
+            menuDashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lbDashboard, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout minmaxclosePanelLayout = new javax.swing.GroupLayout(minmaxclosePanel);
-        minmaxclosePanel.setLayout(minmaxclosePanelLayout);
-        minmaxclosePanelLayout.setHorizontalGroup(
-            minmaxclosePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, minmaxclosePanelLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        minmaxclosePanelLayout.setVerticalGroup(
-            minmaxclosePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(minmaxclosePanelLayout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        holderMenus.add(menuDashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 70));
 
-        upperPanel.add(minmaxclosePanel, java.awt.BorderLayout.LINE_END);
+        menuDrugSale.setBackground(new java.awt.Color(153, 153, 153));
+        menuDrugSale.setMinimumSize(new java.awt.Dimension(250, 50));
+        menuDrugSale.setPreferredSize(new java.awt.Dimension(250, 80));
 
-        getContentPane().add(upperPanel, java.awt.BorderLayout.PAGE_START);
-
-        leftMenuPanel.setBackground(upperPanel.getBackground());
-        leftMenuPanel.setMinimumSize(new java.awt.Dimension(50, 32767));
-        leftMenuPanel.setPreferredSize(new java.awt.Dimension(50, 32767));
-        leftMenuPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel5.setBackground(new java.awt.Color(0, 153, 153));
-        jPanel5.setMaximumSize(new java.awt.Dimension(50, 162));
-        jPanel5.setMinimumSize(new java.awt.Dimension(50, 162));
-        jPanel5.setPreferredSize(new java.awt.Dimension(50, 162));
-        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-
-        jPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
-
-        jPanel7.setBackground(new java.awt.Color(112, 137, 158));
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-
-        jPanel5.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 50, 50));
-
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
-        );
-
-        jPanel5.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 50, 60));
-
-        leftMenuPanel.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        getContentPane().add(leftMenuPanel, java.awt.BorderLayout.LINE_START);
-
-        dashBoardPanel.setBackground(new java.awt.Color(204, 255, 255));
-
-        btnAddDrug.setText("Add Drug");
-        btnAddDrug.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddDrugActionPerformed(evt);
+        lbDrugSale.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
+        lbDrugSale.setForeground(new java.awt.Color(250, 250, 250));
+        lbDrugSale.setIcon(new javax.swing.ImageIcon(getClass().getResource("/drugstoremanagement/images/house.png"))); // NOI18N
+        lbDrugSale.setText("   Drug Sale");
+        lbDrugSale.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lbDrugSaleMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lbDrugSaleMouseEntered(evt);
             }
         });
-        jPanel2.add(btnAddDrug);
 
-        jButton1.setText("logout");
+        javax.swing.GroupLayout menuDrugSaleLayout = new javax.swing.GroupLayout(menuDrugSale);
+        menuDrugSale.setLayout(menuDrugSaleLayout);
+        menuDrugSaleLayout.setHorizontalGroup(
+            menuDrugSaleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuDrugSaleLayout.createSequentialGroup()
+                .addGap(0, 21, Short.MAX_VALUE)
+                .addComponent(lbDrugSale, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        menuDrugSaleLayout.setVerticalGroup(
+            menuDrugSaleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lbDrugSale, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+        );
+
+        holderMenus.add(menuDrugSale, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, -1, 70));
+
+        menuExpiring.setBackground(new java.awt.Color(153, 153, 153));
+        menuExpiring.setMinimumSize(new java.awt.Dimension(250, 50));
+        menuExpiring.setPreferredSize(new java.awt.Dimension(250, 80));
+
+        lbExpiring.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
+        lbExpiring.setForeground(new java.awt.Color(250, 250, 250));
+        lbExpiring.setIcon(new javax.swing.ImageIcon(getClass().getResource("/drugstoremanagement/images/shelf-life.png"))); // NOI18N
+        lbExpiring.setText("   Expiring");
+        lbExpiring.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lbExpiringMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lbExpiringMouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout menuExpiringLayout = new javax.swing.GroupLayout(menuExpiring);
+        menuExpiring.setLayout(menuExpiringLayout);
+        menuExpiringLayout.setHorizontalGroup(
+            menuExpiringLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuExpiringLayout.createSequentialGroup()
+                .addContainerGap(23, Short.MAX_VALUE)
+                .addComponent(lbExpiring, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        menuExpiringLayout.setVerticalGroup(
+            menuExpiringLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lbExpiring, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+        );
+
+        holderMenus.add(menuExpiring, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, -1, 70));
+
+        menuInventory.setBackground(new java.awt.Color(153, 153, 153));
+        menuInventory.setMinimumSize(new java.awt.Dimension(250, 50));
+        menuInventory.setPreferredSize(new java.awt.Dimension(250, 80));
+        menuInventory.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuInventoryMouseEntered(evt);
+            }
+        });
+
+        lbInventory.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
+        lbInventory.setForeground(new java.awt.Color(250, 250, 250));
+        lbInventory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/drugstoremanagement/images/prescription.png"))); // NOI18N
+        lbInventory.setText("   Inventory");
+        lbInventory.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                lbInventoryMouseReleased(evt);
+            }
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbInventoryMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lbInventoryMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lbInventoryMouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout menuInventoryLayout = new javax.swing.GroupLayout(menuInventory);
+        menuInventory.setLayout(menuInventoryLayout);
+        menuInventoryLayout.setHorizontalGroup(
+            menuInventoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuInventoryLayout.createSequentialGroup()
+                .addContainerGap(23, Short.MAX_VALUE)
+                .addComponent(lbInventory, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        menuInventoryLayout.setVerticalGroup(
+            menuInventoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lbInventory, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+        );
+
+        holderMenus.add(menuInventory, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, -1, 70));
+
+        menuExpired.setBackground(new java.awt.Color(153, 153, 153));
+        menuExpired.setMinimumSize(new java.awt.Dimension(250, 50));
+        menuExpired.setPreferredSize(new java.awt.Dimension(250, 80));
+
+        lbExpired.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
+        lbExpired.setForeground(new java.awt.Color(250, 250, 250));
+        lbExpired.setIcon(new javax.swing.ImageIcon(getClass().getResource("/drugstoremanagement/images/expired.png"))); // NOI18N
+        lbExpired.setText("   Expired");
+        lbExpired.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbExpiredMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout menuExpiredLayout = new javax.swing.GroupLayout(menuExpired);
+        menuExpired.setLayout(menuExpiredLayout);
+        menuExpiredLayout.setHorizontalGroup(
+            menuExpiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuExpiredLayout.createSequentialGroup()
+                .addContainerGap(23, Short.MAX_VALUE)
+                .addComponent(lbExpired, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        menuExpiredLayout.setVerticalGroup(
+            menuExpiredLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lbExpired, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+        );
+
+        holderMenus.add(menuExpired, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, -1, 70));
+
+        menuDrugIn.setBackground(new java.awt.Color(153, 153, 153));
+        menuDrugIn.setMinimumSize(new java.awt.Dimension(250, 50));
+        menuDrugIn.setPreferredSize(new java.awt.Dimension(250, 80));
+
+        lbDrugIn.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
+        lbDrugIn.setForeground(new java.awt.Color(250, 250, 250));
+        lbDrugIn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/drugstoremanagement/images/expired.png"))); // NOI18N
+        lbDrugIn.setText("  Drug In");
+        lbDrugIn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbDrugInMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lbDrugInMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lbDrugInMouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout menuDrugInLayout = new javax.swing.GroupLayout(menuDrugIn);
+        menuDrugIn.setLayout(menuDrugInLayout);
+        menuDrugInLayout.setHorizontalGroup(
+            menuDrugInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuDrugInLayout.createSequentialGroup()
+                .addContainerGap(23, Short.MAX_VALUE)
+                .addComponent(lbDrugIn, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        menuDrugInLayout.setVerticalGroup(
+            menuDrugInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lbDrugIn, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+        );
+
+        holderMenus.add(menuDrugIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, -1, 70));
+
+        bottomParent.add(holderMenus, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 1070));
+
+        dashboardFrame.setVisible(true);
+        dashboardFrame.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        bottomParent.add(dashboardFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, -30, 1720, 1070));
+
+        inventoryFrame.setVisible(false);
+        inventoryFrame.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton1.setText("inventory frame");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1);
+        inventoryFrame.getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 340, -1, -1));
 
-        btnSale.setText("Sale");
-        btnSale.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSaleActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnSale);
+        bottomParent.add(inventoryFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -20, 1650, 1050));
 
-        dashBoardPanel.add(jPanel2);
+        drugInFrame.setVisible(false);
+        drugInFrame.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        getContentPane().add(dashBoardPanel, java.awt.BorderLayout.CENTER);
+        jLabel2.setText("Drug in");
+        drugInFrame.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 430, -1, -1));
+
+        bottomParent.add(drugInFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -20, 1650, 1050));
+
+        drugSaleFrame.setVisible(false);
+        drugSaleFrame.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel5.setText("Dashboard");
+        drugSaleFrame.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 180, -1, -1));
+
+        bottomParent.add(drugSaleFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, -30, 1720, 1070));
+
+        expiringFrame.setVisible(false);
+        expiringFrame.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        bottomParent.add(expiringFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -20, 1650, 1050));
+
+        expiredFrame.setVisible(false);
+        expiredFrame.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        bottomParent.add(expiredFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -20, 1650, 1050));
+
+        getContentPane().add(bottomParent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1930, 1110));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAddDrugActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDrugActionPerformed
-        dispose();
-        new AddDrug().setVisible(true);
-    }//GEN-LAST:event_btnAddDrugActionPerformed
+    private void lbInventoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbInventoryMouseClicked
+        CPController.clicked(evt, inventoryFrame);
+    }//GEN-LAST:event_lbInventoryMouseClicked
 
-    private void btnSaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaleActionPerformed
+    private void lbDashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbDashboardMouseClicked
+        CPController.clicked(evt,dashboardFrame);
+        
+    }//GEN-LAST:event_lbDashboardMouseClicked
 
-        dispose();
-        new Sale().setVisible(true);
-    }//GEN-LAST:event_btnSaleActionPerformed
+    private void menuInventoryMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuInventoryMouseEntered
+         
+         
+    }//GEN-LAST:event_menuInventoryMouseEntered
+
+    private void lbInventoryMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbInventoryMouseEntered
+        
+        CPController.entered(evt);        
+    }//GEN-LAST:event_lbInventoryMouseEntered
+
+    private void lbInventoryMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbInventoryMouseReleased
+           
+    }//GEN-LAST:event_lbInventoryMouseReleased
+
+    private void lbInventoryMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbInventoryMouseExited
+        CPController.exited(evt);
+    }//GEN-LAST:event_lbInventoryMouseExited
+
+    private void lbDashboardMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbDashboardMouseEntered
+        CPController.entered(evt);
+    }//GEN-LAST:event_lbDashboardMouseEntered
+
+    private void lbDrugInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbDrugInMouseClicked
+        CPController.clicked(evt,drugInFrame);
+    }//GEN-LAST:event_lbDrugInMouseClicked
+
+    private void lbDrugInMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbDrugInMouseEntered
+        CPController.entered(evt);
+    }//GEN-LAST:event_lbDrugInMouseEntered
+
+    private void lbDrugSaleMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbDrugSaleMouseEntered
+        CPController.entered(evt);
+    }//GEN-LAST:event_lbDrugSaleMouseEntered
+
+    private void lbExpiringMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbExpiringMouseEntered
+        CPController.entered(evt);
+    }//GEN-LAST:event_lbExpiringMouseEntered
+
+    private void lbDashboardMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbDashboardMouseExited
+        CPController.exited(evt);
+    }//GEN-LAST:event_lbDashboardMouseExited
+
+    private void lbDrugInMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbDrugInMouseExited
+        CPController.exited(evt);
+    }//GEN-LAST:event_lbDrugInMouseExited
+
+    private void lbDrugSaleMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbDrugSaleMouseExited
+        CPController.exited(evt);
+    }//GEN-LAST:event_lbDrugSaleMouseExited
+
+    private void lbExpiringMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbExpiringMouseExited
+        CPController.exited(evt);
+    }//GEN-LAST:event_lbExpiringMouseExited
+
+    private void lbExpiredMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbExpiredMouseClicked
+        CPController.clicked(evt,expiredFrame);
+    }//GEN-LAST:event_lbExpiredMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        dispose();
-        new Login().setVisible(true);
+        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-
-
-    }//GEN-LAST:event_jLabel2MouseClicked
-
-    private void jLabel3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseExited
-
-    }//GEN-LAST:event_jLabel3MouseExited
-
-    private void jLabel2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseReleased
-        System.exit(0);   // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel2MouseReleased
-
-    private void jLabel3MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseReleased
-        if (getExtendedState() != MAXIMIZED_BOTH) {
-            setExtendedState(MAXIMIZED_BOTH);
-        } else {
-            setExtendedState(NORMAL); // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel3MouseReleased
-    }
 
     /**
      * @param args the command line arguments
@@ -297,7 +426,22 @@ public class ControlPanel extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(ControlPanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(ControlPanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(ControlPanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(ControlPanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
         //</editor-fold>
 
         /* Create and display the form */
@@ -309,23 +453,33 @@ public class ControlPanel extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAddDrug;
-    private javax.swing.JButton btnSale;
-    private javax.swing.JPanel dashBoardPanel;
+    private javax.swing.JPanel bottomParent;
+    private javax.swing.JInternalFrame dashboardFrame;
+    private javax.swing.JInternalFrame drugInFrame;
+    private javax.swing.JInternalFrame drugSaleFrame;
+    private javax.swing.JInternalFrame expiredFrame;
+    private javax.swing.JInternalFrame expiringFrame;
+    private javax.swing.JPanel holderMenus;
+    private javax.swing.JInternalFrame inventoryFrame;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel leftMenuPanel;
-    private javax.swing.JPanel minmaxclosePanel;
-    private javax.swing.JPanel upperPanel;
+    private javax.swing.JLabel lbDashboard;
+    private javax.swing.JLabel lbDrugIn;
+    private javax.swing.JLabel lbDrugSale;
+    private javax.swing.JLabel lbExpired;
+    private javax.swing.JLabel lbExpiring;
+    private javax.swing.JLabel lbInventory;
+    private javax.swing.JPanel menuDashboard;
+    private javax.swing.JPanel menuDrugIn;
+    private javax.swing.JPanel menuDrugSale;
+    private javax.swing.JPanel menuExpired;
+    private javax.swing.JPanel menuExpiring;
+    private javax.swing.JPanel menuInventory;
+    private java.awt.PopupMenu popupMenu1;
     // End of variables declaration//GEN-END:variables
+
+
 }
