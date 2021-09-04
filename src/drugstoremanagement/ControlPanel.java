@@ -9,6 +9,7 @@ import CustomUI.Themes;
 import drugstoremanagement.controllers.CPController;
 import java.awt.Color;
 import java.awt.Component;
+import javax.swing.JLabel;
 
 /**
  *
@@ -22,6 +23,8 @@ public class ControlPanel extends javax.swing.JFrame {
     public ControlPanel() {
         initComponents();
         CPController.activeMenu = menuDashboard;
+        CPController.headerTitle = headerTitle;
+        
     }
 
     /**
@@ -35,7 +38,7 @@ public class ControlPanel extends javax.swing.JFrame {
 
         popupMenu1 = new java.awt.PopupMenu();
         jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        headerTitle = new javax.swing.JLabel();
         bottomParent = new javax.swing.JPanel();
         holderMenus = new javax.swing.JPanel();
         menuDashboard = new javax.swing.JPanel();
@@ -50,35 +53,47 @@ public class ControlPanel extends javax.swing.JFrame {
         lbExpired = new javax.swing.JLabel();
         menuDrugIn = new javax.swing.JPanel();
         lbDrugIn = new javax.swing.JLabel();
-        dashboardFrame = new javax.swing.JInternalFrame();
-        inventoryFrame = new javax.swing.JInternalFrame();
-        jButton1 = new javax.swing.JButton();
         drugInFrame = new javax.swing.JInternalFrame();
         jLabel2 = new javax.swing.JLabel();
         drugSaleFrame = new javax.swing.JInternalFrame();
         jLabel5 = new javax.swing.JLabel();
         expiringFrame = new javax.swing.JInternalFrame();
         expiredFrame = new javax.swing.JInternalFrame();
+        dashboardFrame = new javax.swing.JInternalFrame();
+        jPanel1 = new javax.swing.JPanel();
+        inventoryFrame = new javax.swing.JInternalFrame();
+        jButton1 = new javax.swing.JButton();
 
         popupMenu1.setLabel("popupMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(java.awt.Color.darkGray);
-        setPreferredSize(new java.awt.Dimension(800, 600));
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setPreferredSize(new java.awt.Dimension(1366, 768));
 
         jPanel3.setBackground(new java.awt.Color(1, 113, 130));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Dashboard");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 530, 70));
+        headerTitle.setFont(new java.awt.Font("DejaVu Sans", 1, 36)); // NOI18N
+        headerTitle.setForeground(new java.awt.Color(255, 255, 255));
+        headerTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        headerTitle.setText("   Dashboard");
+        headerTitle.setIconTextGap(0);
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1930, -1));
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(120, 120, 120)
+                .addComponent(headerTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(headerTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         bottomParent.setBackground(new java.awt.Color(204, 204, 204));
+        bottomParent.setPreferredSize(new java.awt.Dimension(1366, 768));
         bottomParent.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         holderMenus.setBackground(new java.awt.Color(153, 153, 153));
@@ -299,9 +314,64 @@ public class ControlPanel extends javax.swing.JFrame {
 
         bottomParent.add(holderMenus, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 1070));
 
+        drugInFrame.setVisible(false);
+        drugInFrame.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setText("Drug in");
+        drugInFrame.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 430, -1, -1));
+
+        bottomParent.add(drugInFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, -30, 1380, 1000));
+
+        drugSaleFrame.setVisible(false);
+        drugSaleFrame.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel5.setText("Dashboard");
+        drugSaleFrame.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 180, -1, -1));
+
+        bottomParent.add(drugSaleFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, -30, 1380, 1000));
+
+        expiringFrame.setVisible(false);
+        expiringFrame.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        bottomParent.add(expiringFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, -30, 1380, 1000));
+
+        expiredFrame.setVisible(false);
+        expiredFrame.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        bottomParent.add(expiredFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, -30, 1380, 1000));
+
+        dashboardFrame.setPreferredSize(new java.awt.Dimension(1366, 768));
         dashboardFrame.setVisible(true);
-        dashboardFrame.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        bottomParent.add(dashboardFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, -30, 1720, 1070));
+
+        jPanel1.setBackground(new java.awt.Color(200, 200, 200));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1329, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 939, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout dashboardFrameLayout = new javax.swing.GroupLayout(dashboardFrame.getContentPane());
+        dashboardFrame.getContentPane().setLayout(dashboardFrameLayout);
+        dashboardFrameLayout.setHorizontalGroup(
+            dashboardFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dashboardFrameLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(25, 25, 25))
+        );
+        dashboardFrameLayout.setVerticalGroup(
+            dashboardFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dashboardFrameLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
+        bottomParent.add(dashboardFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, -30, 1380, 1000));
 
         inventoryFrame.setVisible(false);
         inventoryFrame.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -314,40 +384,32 @@ public class ControlPanel extends javax.swing.JFrame {
         });
         inventoryFrame.getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 340, -1, -1));
 
-        bottomParent.add(inventoryFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -20, 1650, 1050));
+        bottomParent.add(inventoryFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, -30, 1380, 1000));
 
-        drugInFrame.setVisible(false);
-        drugInFrame.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setText("Drug in");
-        drugInFrame.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 430, -1, -1));
-
-        bottomParent.add(drugInFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -20, 1650, 1050));
-
-        drugSaleFrame.setVisible(false);
-        drugSaleFrame.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel5.setText("Dashboard");
-        drugSaleFrame.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 180, -1, -1));
-
-        bottomParent.add(drugSaleFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, -30, 1720, 1070));
-
-        expiringFrame.setVisible(false);
-        expiringFrame.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        bottomParent.add(expiringFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -20, 1650, 1050));
-
-        expiredFrame.setVisible(false);
-        expiredFrame.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        bottomParent.add(expiredFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -20, 1650, 1050));
-
-        getContentPane().add(bottomParent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1930, 1110));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(bottomParent, javax.swing.GroupLayout.PREFERRED_SIZE, 1606, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bottomParent, javax.swing.GroupLayout.PREFERRED_SIZE, 949, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void lbInventoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbInventoryMouseClicked
         CPController.clicked(evt, inventoryFrame);
+     
     }//GEN-LAST:event_lbInventoryMouseClicked
 
     private void lbDashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbDashboardMouseClicked
@@ -459,12 +521,13 @@ public class ControlPanel extends javax.swing.JFrame {
     private javax.swing.JInternalFrame drugSaleFrame;
     private javax.swing.JInternalFrame expiredFrame;
     private javax.swing.JInternalFrame expiringFrame;
+    private javax.swing.JLabel headerTitle;
     private javax.swing.JPanel holderMenus;
     private javax.swing.JInternalFrame inventoryFrame;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel lbDashboard;
     private javax.swing.JLabel lbDrugIn;

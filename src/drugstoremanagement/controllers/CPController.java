@@ -12,6 +12,7 @@ import java.awt.Point;
  import java.awt.event.MouseEvent;
 import javafx.animation.Animation;
  import javax.swing.JInternalFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
@@ -22,6 +23,7 @@ public class CPController {
 
     public static JPanel activeMenu = new JPanel();
     public static JInternalFrame activeFrame = new JInternalFrame();
+    public static JLabel headerTitle ;
 
     public static void entered(MouseEvent evt) {
         JPanel enteredPanel = (JPanel) evt.getComponent().getParent();
@@ -44,7 +46,9 @@ public class CPController {
         activeFrame.setVisible(false);
         activeFrame = selectedFrame;
         activeFrame.setVisible(true);
-
+        
+        JLabel jl = (JLabel) lbClicked.getComponent();
+        headerTitle.setText(jl.getText());
     }
 
     public static void exited(MouseEvent evt) {
