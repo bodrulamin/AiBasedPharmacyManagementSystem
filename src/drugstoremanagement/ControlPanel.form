@@ -473,7 +473,7 @@
         <Container class="javax.swing.JInternalFrame" name="drugInFrame">
           <Properties>
             <Property name="opaque" type="boolean" value="false"/>
-            <Property name="visible" type="boolean" value="false"/>
+            <Property name="visible" type="boolean" value="true"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -500,7 +500,7 @@
         <Container class="javax.swing.JInternalFrame" name="drugSaleFrame">
           <Properties>
             <Property name="opaque" type="boolean" value="false"/>
-            <Property name="visible" type="boolean" value="false"/>
+            <Property name="visible" type="boolean" value="true"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -527,7 +527,7 @@
         <Container class="javax.swing.JInternalFrame" name="expiringFrame">
           <Properties>
             <Property name="opaque" type="boolean" value="false"/>
-            <Property name="visible" type="boolean" value="false"/>
+            <Property name="visible" type="boolean" value="true"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -542,7 +542,7 @@
         <Container class="javax.swing.JInternalFrame" name="expiredFrame">
           <Properties>
             <Property name="opaque" type="boolean" value="false"/>
-            <Property name="visible" type="boolean" value="false"/>
+            <Property name="visible" type="boolean" value="true"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -584,7 +584,7 @@
         <Container class="javax.swing.JInternalFrame" name="inventoryFrame">
           <Properties>
             <Property name="opaque" type="boolean" value="false"/>
-            <Property name="visible" type="boolean" value="false"/>
+            <Property name="visible" type="boolean" value="true"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">

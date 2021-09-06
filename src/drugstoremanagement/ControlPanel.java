@@ -323,7 +323,7 @@ public class ControlPanel extends javax.swing.JFrame {
         bottomParent.add(holderMenus, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 1070));
 
         drugInFrame.setOpaque(false);
-        drugInFrame.setVisible(false);
+        drugInFrame.setVisible(true);
         drugInFrame.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setText("Drug in");
@@ -332,7 +332,7 @@ public class ControlPanel extends javax.swing.JFrame {
         bottomParent.add(drugInFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, -30, 1380, 1000));
 
         drugSaleFrame.setOpaque(false);
-        drugSaleFrame.setVisible(false);
+        drugSaleFrame.setVisible(true);
         drugSaleFrame.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel5.setText("Dashboard");
@@ -341,12 +341,12 @@ public class ControlPanel extends javax.swing.JFrame {
         bottomParent.add(drugSaleFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, -30, 1380, 1000));
 
         expiringFrame.setOpaque(false);
-        expiringFrame.setVisible(false);
+        expiringFrame.setVisible(true);
         expiringFrame.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         bottomParent.add(expiringFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, -30, 1380, 1000));
 
         expiredFrame.setOpaque(false);
-        expiredFrame.setVisible(false);
+        expiredFrame.setVisible(true);
         expiredFrame.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         bottomParent.add(expiredFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, -30, 1380, 1000));
 
@@ -368,7 +368,7 @@ public class ControlPanel extends javax.swing.JFrame {
         bottomParent.add(dashboardFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, -30, 1380, 1000));
 
         inventoryFrame.setOpaque(false);
-        inventoryFrame.setVisible(false);
+        inventoryFrame.setVisible(true);
         inventoryFrame.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setText("inventory frame");
