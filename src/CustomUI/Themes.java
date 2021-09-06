@@ -6,11 +6,6 @@
 package CustomUI;
 
 import java.awt.Color;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JPanel;
 
 /**
  *
@@ -18,26 +13,24 @@ import javax.swing.JPanel;
  */
 public class Themes {
 
- 
-
     public static Color getMenuUnselectedBg() {
-
-        return new Color(153, 153, 153);
+      return Color.decode("#718CAE");
     }
+
     public static Color getMenuHoverBg() {
-
-
-        return new Color(140, 140, 140);
+  //return Color.decode("#786E59");
+        return Color.decode("#445C7C");
+        
     }
 
     public static Color getMenuSelectedBg() {
-        return new Color(50, 50, 50);
-
+  return Color.decode("#445C7C");
+      
     }
-    
-    
-    // from 
-  
 
+    // from 
+    public static Color getLeftPanelColor() {
+        return  getMenuUnselectedBg();
+    }
 
 }
