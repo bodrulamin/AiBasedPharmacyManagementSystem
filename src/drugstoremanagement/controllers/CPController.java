@@ -24,7 +24,7 @@ public class CPController {
     public static JPanel activeMenu = new JPanel();
     public static JInternalFrame activeFrame = new JInternalFrame();
     public static JLabel headerTitle ;
-
+ 
     public static void entered(MouseEvent evt) {
         JPanel enteredPanel = (JPanel) evt.getComponent().getParent();
         enteredPanel.setBackground(Themes.getMenuHoverBg());
@@ -33,10 +33,7 @@ public class CPController {
       int x=  evt.getComponent().getBounds().x += 2;
         evt.getComponent().setLocation(x, evt.getComponent().getLocation().y);
         
-        
-        
-         
-
+  
     }
 
     public static void clicked(MouseEvent lbClicked, JInternalFrame selectedFrame) {

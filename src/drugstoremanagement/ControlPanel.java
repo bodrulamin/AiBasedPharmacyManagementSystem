@@ -60,7 +60,6 @@ public class ControlPanel extends javax.swing.JFrame {
         expiringFrame = new javax.swing.JInternalFrame();
         expiredFrame = new javax.swing.JInternalFrame();
         dashboardFrame = new javax.swing.JInternalFrame();
-        jPanel1 = new javax.swing.JPanel();
         inventoryFrame = new javax.swing.JInternalFrame();
         jButton1 = new javax.swing.JButton();
 
@@ -178,6 +177,9 @@ public class ControlPanel extends javax.swing.JFrame {
         lbExpiring.setIcon(new javax.swing.ImageIcon(getClass().getResource("/drugstoremanagement/images/shelf-life.png"))); // NOI18N
         lbExpiring.setText("   Expiring");
         lbExpiring.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbExpiringMouseClicked(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 lbExpiringMouseExited(evt);
             }
@@ -258,6 +260,12 @@ public class ControlPanel extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbExpiredMouseClicked(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lbExpiredMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lbExpiredMouseEntered(evt);
+            }
         });
 
         javax.swing.GroupLayout menuExpiredLayout = new javax.swing.GroupLayout(menuExpired);
@@ -314,6 +322,7 @@ public class ControlPanel extends javax.swing.JFrame {
 
         bottomParent.add(holderMenus, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 1070));
 
+        drugInFrame.setOpaque(false);
         drugInFrame.setVisible(false);
         drugInFrame.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -322,6 +331,7 @@ public class ControlPanel extends javax.swing.JFrame {
 
         bottomParent.add(drugInFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, -30, 1380, 1000));
 
+        drugSaleFrame.setOpaque(false);
         drugSaleFrame.setVisible(false);
         drugSaleFrame.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -330,49 +340,34 @@ public class ControlPanel extends javax.swing.JFrame {
 
         bottomParent.add(drugSaleFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, -30, 1380, 1000));
 
+        expiringFrame.setOpaque(false);
         expiringFrame.setVisible(false);
         expiringFrame.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         bottomParent.add(expiringFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, -30, 1380, 1000));
 
+        expiredFrame.setOpaque(false);
         expiredFrame.setVisible(false);
         expiredFrame.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         bottomParent.add(expiredFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, -30, 1380, 1000));
 
+        dashboardFrame.setOpaque(false);
         dashboardFrame.setPreferredSize(new java.awt.Dimension(1366, 768));
         dashboardFrame.setVisible(true);
-
-        jPanel1.setBackground(new java.awt.Color(200, 200, 200));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1329, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 939, Short.MAX_VALUE)
-        );
 
         javax.swing.GroupLayout dashboardFrameLayout = new javax.swing.GroupLayout(dashboardFrame.getContentPane());
         dashboardFrame.getContentPane().setLayout(dashboardFrameLayout);
         dashboardFrameLayout.setHorizontalGroup(
             dashboardFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(dashboardFrameLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(25, 25, 25))
+            .addGap(0, 1368, Short.MAX_VALUE)
         );
         dashboardFrameLayout.setVerticalGroup(
             dashboardFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(dashboardFrameLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+            .addGap(0, 969, Short.MAX_VALUE)
         );
 
         bottomParent.add(dashboardFrame, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, -30, 1380, 1000));
 
+        inventoryFrame.setOpaque(false);
         inventoryFrame.setVisible(false);
         inventoryFrame.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -418,7 +413,7 @@ public class ControlPanel extends javax.swing.JFrame {
     }//GEN-LAST:event_lbDashboardMouseClicked
 
     private void menuInventoryMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuInventoryMouseEntered
-         
+         CPController.entered(evt);
          
     }//GEN-LAST:event_menuInventoryMouseEntered
 
@@ -479,6 +474,18 @@ public class ControlPanel extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void lbExpiringMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbExpiringMouseClicked
+        CPController.clicked(evt, expiringFrame);
+    }//GEN-LAST:event_lbExpiringMouseClicked
+
+    private void lbExpiredMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbExpiredMouseEntered
+        CPController.entered(evt);
+    }//GEN-LAST:event_lbExpiredMouseEntered
+
+    private void lbExpiredMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbExpiredMouseExited
+        CPController.exited(evt);
+    }//GEN-LAST:event_lbExpiredMouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -527,7 +534,6 @@ public class ControlPanel extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel lbDashboard;
     private javax.swing.JLabel lbDrugIn;
