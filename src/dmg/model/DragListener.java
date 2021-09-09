@@ -5,7 +5,7 @@
  */
 package dmg.model;
 
-import dmg.allscreens.ControlPanel;
+import dmg.cpanel.ControlPanel;
 import java.awt.Component;
 import java.awt.Point;
 import java.awt.event.MouseEvent;

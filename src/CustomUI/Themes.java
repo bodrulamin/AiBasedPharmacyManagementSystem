@@ -14,23 +14,23 @@ import java.awt.Color;
 public class Themes {
 
     public static Color getMenuUnselectedBg() {
-      return Color.decode("#718CAE");
+        return Color.decode("#718CAE");
     }
 
     public static Color getMenuHoverBg() {
-  //return Color.decode("#786E59");
+        //return Color.decode("#786E59");
         return Color.decode("#445C7C");
-        
+
     }
 
     public static Color getMenuSelectedBg() {
-  return Color.decode("#445C7C");
-      
+        return Color.decode("#445C7C");
+
     }
 
     // from 
     public static Color getLeftPanelColor() {
-        return  getMenuUnselectedBg();
+        return getMenuUnselectedBg();
     }
 
 }

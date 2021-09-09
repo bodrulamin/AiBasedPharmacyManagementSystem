@@ -5,8 +5,8 @@
  */
 package dmg.controllers;
 
-import dmg.allscreens.ControlPanel;
-import dmg.allscreens.UserControlPanel;
+import dmg.cpanel.ControlPanel;
+import dmg.screens.UserControlPanel;
 
 import dmg.model.User;
 import dmg.service.UserDaoImple;
