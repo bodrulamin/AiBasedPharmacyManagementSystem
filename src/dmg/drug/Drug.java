@@ -44,10 +44,17 @@ public class Drug implements Serializable {
         };
     }
 
-    public Company  getCompany(int companyid) {
+    public static Company  getCompany(int companyid) {
         CompanyDao cd = new CompanyDaoImpl();
         Company company = cd.getCompany(companyid);
         return company;
+
+    }
+
+    public static Drug getDrug(int drugid) {
+        DrugDao cd = new DrugDaoImpl();
+        Drug drug = cd.getDrug(drugid);
+        return drug;
 
     }
 

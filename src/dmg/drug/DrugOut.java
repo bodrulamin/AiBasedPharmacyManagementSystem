@@ -17,46 +17,37 @@ public class DrugOut {
     private double buyprice;
     private double saleprice;
     private int quantity;
-    private int batchno;
+    private int inventoryid;
     private int customerid;
     private int companyid;
-    private Date entrydate;
+    private Date saleDate;
     private Date expdate;
     private Date mfgdate;
 
-
-    public DrugOut(int invoiceid, int drugid, double buyprice, double saleprice, int quantity, int batchno, int customerid, int companyid, Date entrydate, Date expdate, Date mfgdate) {
+    public DrugOut(int invoiceid, int drugid, double buyprice, double saleprice, int quantity, int inventoryid, int customerid, int companyid, Date saleDate, Date expdate, Date mfgdate) {
         this.invoiceid = invoiceid;
         this.drugid = drugid;
         this.buyprice = buyprice;
         this.saleprice = saleprice;
         this.quantity = quantity;
-        this.batchno = batchno;
+        this.inventoryid = inventoryid;
         this.customerid = customerid;
         this.companyid = companyid;
-        this.entrydate = entrydate;
+        this.saleDate = saleDate;
         this.expdate = expdate;
         this.mfgdate = mfgdate;
     }
 
-    public DrugOut(int drugid, double buyprice, double saleprice, int quantity, int batchno, int customerid, int companyid, Date entrydate, Date expdate, Date mfgdate) {
+    public DrugOut(int drugid, double buyprice, double saleprice, int quantity, int inventoryid, int customerid, int companyid, Date saleDate, Date expdate, Date mfgdate) {
         this.drugid = drugid;
         this.buyprice = buyprice;
         this.saleprice = saleprice;
         this.quantity = quantity;
-        this.batchno = batchno;
+        this.inventoryid = inventoryid;
         this.customerid = customerid;
         this.companyid = companyid;
-        this.entrydate = entrydate;
+        this.saleDate = saleDate;
         this.expdate = expdate;
-        this.mfgdate = mfgdate;
-    }
-
-    public Date getMfgdate() {
-        return mfgdate;
-    }
-
-    public void setMfgdate(Date mfgdate) {
         this.mfgdate = mfgdate;
     }
 
@@ -100,12 +91,12 @@ public class DrugOut {
         this.quantity = quantity;
     }
 
-    public int getBatchno() {
-        return batchno;
+    public int getInventoryid() {
+        return inventoryid;
     }
 
-    public void setBatchno(int batchno) {
-        this.batchno = batchno;
+    public void setInventoryid(int inventoryid) {
+        this.inventoryid = inventoryid;
     }
 
     public int getCustomerid() {
@@ -124,12 +115,12 @@ public class DrugOut {
         this.companyid = companyid;
     }
 
-    public Date getEntrydate() {
-        return entrydate;
+    public Date getSaleDate() {
+        return saleDate;
     }
 
-    public void setEntrydate(Date entrydate) {
-        this.entrydate = entrydate;
+    public void setSaleDate(Date saleDate) {
+        this.saleDate = saleDate;
     }
 
     public Date getExpdate() {
@@ -140,10 +131,18 @@ public class DrugOut {
         this.expdate = expdate;
     }
 
-    @Override
-    public String toString() {
-        return "DrugOut{" + "invoiceid=" + invoiceid + ", drugid=" + drugid + ", buyprice=" + buyprice + ", saleprice=" + saleprice + ", quantity=" + quantity + ", batchno=" + batchno + ", customerid=" + customerid + ", companyid=" + companyid + ", entrydate=" + entrydate + ", expdate=" + expdate + ", mfgdate=" + mfgdate + '}';
+    public Date getMfgdate() {
+        return mfgdate;
     }
 
+    public void setMfgdate(Date mfgdate) {
+        this.mfgdate = mfgdate;
+    }
+
+    @Override
+    public String toString() {
+        return "DrugOut{" + "invoiceid=" + invoiceid + ", drugid=" + drugid + ", buyprice=" + buyprice + ", saleprice=" + saleprice + ", quantity=" + quantity + ", inventoryid=" + inventoryid + ", customerid=" + customerid + ", companyid=" + companyid + ", saleDate=" + saleDate + ", expdate=" + expdate + ", mfgdate=" + mfgdate + '}';
+    }
+ 
     
 }

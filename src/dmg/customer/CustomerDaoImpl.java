@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dmg.drug;
+package dmg.customer;
 
+import dmg.drug.*;
 import dmg.service.DBConnector;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,21 +14,21 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DrugDaoImpl implements DrugDao {
+public class CustomerDaoImpl implements CustomerDao {
 
     public static Object lastMsg = "";
 
     Connection conn = DBConnector.getConnection();
 
     @Override
-    public void addDrug(Drug drug) {
+    public void addCustomer(Customer customer) {
         try {
             String sql = "insert into druglist(name,buyprice,saleprice,companyid) values (?,?,?,?)";
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1, drug.getName());
-            ps.setDouble(2, drug.getBuyprice());
-            ps.setDouble(3, drug.getSaleprice());
-            ps.setInt(4, drug.getCompanyid());
+            ps.setString(1, customer.getName());
+            ps.setString(2, customer.getContact());
+            ps.setString(3, customer.getEmail());
+            ps.setString(4, customer.getAddress());
             ps.execute();
 
             System.out.println("Added Successfully");
@@ -37,21 +38,11 @@ public class DrugDaoImpl implements DrugDao {
             lastMsg = ex.getMessage();
         }
     }
-
+ 
     @Override
-    public void deleteDrug(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void updateDrug(Drug drug) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public List<Drug> getDrugList(String q) {
+    public List<Customer> getCustomerList(String q) {
         String wildcard = "%" + q + "%";
-        List<Drug> cList = new ArrayList<Drug>();
+        List<Customer> cList = new ArrayList<Customer>();
         String sql = "select * from druglist where name like ? or companyid like ?";
 
         try {
@@ -62,14 +53,14 @@ public class DrugDaoImpl implements DrugDao {
             
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                Drug drug = new Drug(
+                Customer customer = new Customer(
                         rs.getInt("id"),
                         rs.getString("name"),
-                        rs.getDouble("buyprice"),
-                        rs.getDouble("saleprice"),
-                        rs.getInt("companyid")
+                        rs.getString("contact"),
+                        rs.getString("email"),
+                        rs.getString("address")
                 );
-                cList.add(drug);
+                cList.add(customer);
              
                 
             }
@@ -82,9 +73,9 @@ public class DrugDaoImpl implements DrugDao {
     }
 
     @Override
-    public Drug getDrug(int id) {
+    public Customer getCustomer(int id) {
 
-        Drug drug = null;
+        Customer drug = null;
         String sql = "select * from druglist where id = ?";
 
         try {
@@ -94,11 +85,11 @@ public class DrugDaoImpl implements DrugDao {
             
             ResultSet rs = ps.executeQuery();
             rs.next();
-            drug = new Drug(rs.getInt("id"),
+            drug = new Customer(rs.getInt("id"),
                     rs.getString("name"),
-                    rs.getDouble("buyprice"),
-                    rs.getDouble("saleprice"),
-                    rs.getInt("companyid")
+                    rs.getString("contact"),
+                    rs.getString("email"),
+                    rs.getString("address")
             );
 
          
@@ -112,4 +103,14 @@ public class DrugDaoImpl implements DrugDao {
 
     }
 
+    @Override
+    public void deleteCustomer(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void updateCustomer(Drug drug) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+ 
 }

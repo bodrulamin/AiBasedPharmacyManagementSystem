@@ -14,6 +14,16 @@ public interface DrugInDao {
     void deleteDrugIn(int id);
     void updateDrugIn(DrugIn drug); 
     public List<DrugIn> getDrugInList(String q);     
-
+    public List<DrugIn> getDrugInventoryList(String q, String orderClause);    
     public int getNextBillId();
+    public String getDrugCount();
+    public String getCompanyCount();
+    public List<DrugIn> getDrugExpiringList(int aftermonth, String orderClause);
+    public List<DrugIn> getDrugExpiredList( );
+    public int getDrugExpiringCount(int aftermonth);
+    public int getDrugExpiredCount();
+    public int getOutOfStockCount();
+    public int getLimitedStock(int lessthanCount) ;
+
+    
 }

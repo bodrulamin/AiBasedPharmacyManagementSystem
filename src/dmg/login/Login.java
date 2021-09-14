@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dmg.screens;
+package dmg.login;
 
-import dmg.controllers.LoginController;
+import dmg.login.LoginController;
 
 /**
  *

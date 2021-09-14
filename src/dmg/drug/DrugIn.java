@@ -6,14 +6,16 @@
 package dmg.drug;
 
 import java.io.Serializable;
- import java.sql.Date;
+import java.sql.Date;
+import java.util.Vector;
+import java.util.stream.Stream;
 
 /**
  *
  * @author b
  */
-public class DrugIn implements Serializable{
-    
+public class DrugIn implements Serializable {
+
     private int billid;
     private int drugid;
     private double buyprice;
@@ -50,8 +52,6 @@ public class DrugIn implements Serializable{
         this.mfgdate = mfgdate;
     }
 
-    
-    
     public Date getMfgdate() {
         return mfgdate;
     }
@@ -86,6 +86,10 @@ public class DrugIn implements Serializable{
 
     public double getSaleprice() {
         return saleprice;
+    }
+
+    public double getTotal() {
+        return saleprice * quantity;
     }
 
     public void setSaleprice(double saleprice) {
@@ -135,8 +139,37 @@ public class DrugIn implements Serializable{
     @Override
     public String toString() {
         return "DrugIn{" + "billid=" + billid + ", drugid=" + drugid + ", buyprice=" + buyprice + ", saleprice=" + saleprice + ", quantity=" + quantity + ", batchno=" + batchno + ", companyid=" + companyid + ", entrydate=" + entrydate + ", expdate=" + expdate + ", mfgdate=" + mfgdate + '}';
+
     }
-    
-    
-    
+
+    public Object[] toSelectorModel() {
+        return new Object[]{
+            billid,
+            Drug.getDrug(drugid).getName(),
+            buyprice, saleprice, quantity, batchno, Drug.getCompany(companyid).getName(), entrydate, expdate, mfgdate
+
+        };
+    }
+
+    public Object[] toInventoryModel() {
+        return new Object[]{
+            billid,
+            Drug.getDrug(drugid).getName(), Drug.getCompany(companyid).getName(),
+            buyprice, saleprice, quantity, batchno, entrydate, mfgdate, expdate
+
+        };
+    }
+
+    public Object[] toInvoiceModel(int serial) {
+        return new Object[]{
+            serial,
+            Drug.getDrug(drugid).getName(), Drug.getCompany(companyid).getName(), quantity, saleprice,
+            (saleprice * quantity), expdate, batchno
+        };
+    }
+
+    public DrugOut toDrugOut(int customerid, Date saledate) {
+        return new DrugOut(drugid, buyprice, saleprice, quantity, billid, customerid, companyid, saledate, expdate, mfgdate);
+    }
+
 }

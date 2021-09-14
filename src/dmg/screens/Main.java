@@ -5,6 +5,7 @@
  */
 package dmg.screens;
 
+import dmg.login.Login;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;

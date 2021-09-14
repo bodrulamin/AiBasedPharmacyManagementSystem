@@ -11,19 +11,26 @@ import dmg.drug.AddDrugs;
 import dmg.drug.DrugIn;
 import dmg.drug.DrugInDao;
 import dmg.drug.DrugInDaoImpl;
+import dmg.drug.DrugInventorySelector;
+import dmg.drug.DrugOutDao;
+import dmg.drug.DrugOutDaoImpl;
 import dmg.drug.OnSetDrug;
+import dmg.drug.OnSetDrugIn;
 import java.awt.Component;
 import java.awt.event.MouseEvent;
+import java.sql.Date;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
+import javax.swing.table.DefaultTableModel;
 
 
 public class CPController {
 
    static DrugInDao daoDrugIn = new DrugInDaoImpl();
+   static DrugOutDao daoDrugOut = new DrugOutDaoImpl();
     
     public static JLabel activeMenu = null;
     public static JLabel headerTitle;
@@ -127,11 +134,28 @@ public class CPController {
     }
 
     public static void addDrugIn(DrugIn drugin) {
-             daoDrugIn.addDrugIn(drugin);
-            
+             daoDrugIn.addDrugIn(drugin); 
     }
 
-   
+    public static void AddToInvoice(OnSetDrugIn onSetDrugIn) {
+        DrugInventorySelector dinventory = new DrugInventorySelector();
+        dinventory.setTitle("Select Drug from inventory");
+        dinventory.setListener(onSetDrugIn);
+        dinventory.setVisible(true);
+    }
+ 
+    public static void removeRows(DefaultTableModel dtm) {
+        int count = dtm.getRowCount();
+        for (int i = 0; i < count; i++) {
+            dtm.removeRow(0);
+        }
+    }
+
+    static void addDrugOut(DrugIn d, int cid, Date saledate) {        
+        daoDrugOut.addDrugOut(d.toDrugOut( cid,  saledate));
+    }
+    
+ 
    
 
 }

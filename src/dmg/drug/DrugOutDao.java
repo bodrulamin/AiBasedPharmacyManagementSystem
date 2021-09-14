@@ -5,6 +5,7 @@
  */
 package dmg.drug;
  
+import java.sql.Date;
   import java.util.List;
 
  
@@ -13,5 +14,8 @@ public interface DrugOutDao {
     void addDrugOut(DrugOut drugOut);
     void deleteDrugOut(int id);
     void updateDrugOut(DrugOut drugOut); 
-    public List<DrugOut> getDrugOutList(String q);     
+    public List<DrugOut> getDrugOutList(String q);   
+    public Double getTotalSale(Date from, Date to);
+    public Double getTotalExpense(Date from, Date to);
+    public Double getTotalProfit(Date from, Date to);
 }
