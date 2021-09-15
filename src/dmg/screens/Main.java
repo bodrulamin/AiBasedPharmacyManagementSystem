@@ -10,19 +10,17 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 
-/**
- *
- * @author b
- */
+ 
 public class Main {
 
     public static void main(String[] args) {
-        setLook();
+       setLook();
         JFrame splash = new Splash();
          splash.setVisible(true);
         sleep();
         
         JFrame login = new Login();
+        login.setTitle("Login");
         login.setVisible(true);
         
         splash.dispose();
@@ -40,7 +38,7 @@ public class Main {
     private static void setLook() {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
+                if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }

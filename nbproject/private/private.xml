@@ -1,21 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/b/NetBeansProjects/AiBasedPharmacyManagement/src/dmg/drug/DrugIn.java</file>
-            <file>file:/home/b/NetBeansProjects/AiBasedPharmacyManagement/src/dmg/drug/DrugInventorySelector.java</file>
-            <file>file:/home/b/NetBeansProjects/AiBasedPharmacyManagement/src/dmg/drug/DrugOut.java</file>
             <file>file:/home/b/NetBeansProjects/AiBasedPharmacyManagement/src/dmg/cpanel/ControlPanel.java</file>
-            <file>file:/home/b/NetBeansProjects/AiBasedPharmacyManagement/src/dmg/drug/DrugInDaoImpl.java</file>
-            <file>file:/home/b/NetBeansProjects/AiBasedPharmacyManagement/src/dmg/customer/AddCustomer.java</file>
-            <file>file:/home/b/NetBeansProjects/AiBasedPharmacyManagement/src/dmg/drug/DrugInDao.java</file>
-            <file>file:/home/b/NetBeansProjects/AiBasedPharmacyManagement/src/dmg/drug/DrugOutDaoImpl.java</file>
-            <file>file:/home/b/NetBeansProjects/AiBasedPharmacyManagement/src/dmg/drug/DrugDaoImpl.java</file>
-            <file>file:/home/b/NetBeansProjects/AiBasedPharmacyManagement/src/dmg/cpanel/CPController.java</file>
-            <file>file:/home/b/NetBeansProjects/AiBasedPharmacyManagement/src/dmg/drug/DrugOutDao.java</file>
-            <file>file:/home/b/NetBeansProjects/AiBasedPharmacyManagement/src/dmg/drug/AddDrugs.java</file>
-            <file>file:/home/b/NetBeansProjects/AiBasedPharmacyManagement/src/dmg/drug/DrugDao.java</file>
+            <file>file:/home/b/NetBeansProjects/AiBasedPharmacyManagement/src/dmg/screens/Main.java</file>
         </group>
     </open-files>
 </project-private>

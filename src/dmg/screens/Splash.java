@@ -26,22 +26,19 @@ public class Splash extends javax.swing.JFrame {
 
         pharmatext.setFont(new java.awt.Font("Source Sans 3 Black", 1, 48)); // NOI18N
         pharmatext.setForeground(new java.awt.Color(51, 51, 51));
-        pharmatext.setText("Pharmacy");
-        getContentPane().add(pharmatext, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 410, 240, 90));
+        pharmatext.setText("Pharma");
+        getContentPane().add(pharmatext, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 410, 240, 90));
 
         pharmaName.setFont(new java.awt.Font("Source Sans 3 Black", 1, 48)); // NOI18N
-        pharmaName.setText("XYZ");
-        getContentPane().add(pharmaName, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 390, 100, -1));
+        pharmaName.setText("Ai");
+        getContentPane().add(pharmaName, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 390, 80, -1));
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dmg/screens/images/capsule.gif"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dmg/images/capsule.gif"))); // NOI18N
         jLabel4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabel4.setAlignmentY(0.0F);
         jLabel4.setBorder(null);
         jLabel4.setIconTextGap(0);
-        jLabel4.setMaximumSize(null);
-        jLabel4.setMinimumSize(null);
-        jLabel4.setPreferredSize(null);
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
 
         pack();

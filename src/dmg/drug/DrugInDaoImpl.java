@@ -107,7 +107,8 @@ public class DrugInDaoImpl implements DrugInDao {
                         rs.getDate("mfgdate")
                 );
                 cList.add(drug);
-                System.out.println(drug);
+               
+                
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -184,7 +185,7 @@ public class DrugInDaoImpl implements DrugInDao {
                         rs.getDate("mfgdate")
                 );
                 cList.add(drug);
-                System.out.println(drug);
+               
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -221,7 +222,7 @@ public class DrugInDaoImpl implements DrugInDao {
                         rs.getDate("mfgdate")
                 );
                 cList.add(drug);
-                System.out.println(drug);
+                
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -258,13 +259,11 @@ public class DrugInDaoImpl implements DrugInDao {
     @Override
     public int getDrugExpiredCount() {
         int count = 0;
-        String sql = " SELECT count(*) FROM druginventory where expdate < now()";
+        String sql = " SELECT count(*) FROM druginventory where expdate < now() and quantity > 0";
 
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
-          
-          
-
+           
             ResultSet rs = ps.executeQuery();
             rs.next();
             count = rs.getInt(1);

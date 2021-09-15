@@ -70,7 +70,8 @@ public class DrugOutDaoImpl implements DrugOutDao {
             ps.setString(1, wildcard);
             ps.setString(2, wildcard);
             ps.setString(3, wildcard);
-            System.out.println(ps.toString());
+     
+            
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 DrugOut drugOut = new DrugOut(
@@ -87,7 +88,8 @@ public class DrugOutDaoImpl implements DrugOutDao {
                         rs.getDate("mfgdate")
                 );
                 cList.add(drugOut);
-                System.out.println(drugOut);
+           
+                
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -107,7 +109,7 @@ public class DrugOutDaoImpl implements DrugOutDao {
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setInt(1, id);
 
-            System.out.println(ps.toString());
+            
             ResultSet rs = ps.executeQuery();
             rs.next();
             drugOut = new DrugOut(
@@ -124,7 +126,8 @@ public class DrugOutDaoImpl implements DrugOutDao {
                     rs.getDate("mfgdate")
             );
 
-            System.out.println(drugOut);
+   
+            
 
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -145,7 +148,7 @@ public class DrugOutDaoImpl implements DrugOutDao {
             ps.setDate(1, from);
             ps.setDate(2, to);
 
-            System.out.println(ps.toString());
+            
             ResultSet rs = ps.executeQuery();
             rs.next();
 
@@ -170,7 +173,7 @@ public class DrugOutDaoImpl implements DrugOutDao {
             ps.setDate(1, from);
             ps.setDate(2, to);
 
-            System.out.println(ps.toString());
+            
             ResultSet rs = ps.executeQuery();
             rs.next();
 
@@ -195,7 +198,7 @@ public class DrugOutDaoImpl implements DrugOutDao {
             ps.setDate(1, from);
             ps.setDate(2, to);
 
-            System.out.println(ps.toString());
+            
             ResultSet rs = ps.executeQuery();
             rs.next();
 

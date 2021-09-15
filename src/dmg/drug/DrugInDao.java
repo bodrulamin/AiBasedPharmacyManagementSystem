@@ -19,7 +19,7 @@ public interface DrugInDao {
     public String getDrugCount();
     public String getCompanyCount();
     public List<DrugIn> getDrugExpiringList(int aftermonth, String orderClause);
-    public List<DrugIn> getDrugExpiredList( );
+    public List<DrugIn> getDrugExpiredList();
     public int getDrugExpiringCount(int aftermonth);
     public int getDrugExpiredCount();
     public int getOutOfStockCount();
