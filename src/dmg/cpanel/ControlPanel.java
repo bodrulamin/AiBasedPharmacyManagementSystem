@@ -2224,9 +2224,8 @@ public class ControlPanel extends javax.swing.JFrame {
         
         
         int limitedStockCount = drugInDao.getLimitedStock(1000);
-        lbLimitedStockDash.setText(String.valueOf(limitedStockCount));
-        
-        
+        lbLimitedStockDash.setText(String.valueOf(limitedStockCount));  
+        updateTotalsIncomeExpenseProfit();
         
 
     }
